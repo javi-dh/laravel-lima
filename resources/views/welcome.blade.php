@@ -82,6 +82,24 @@
                     Laravel
                 </div>
 
+                <form method="POST" action="{{ route('user.store') }}">
+                  {!! csrf_field() !!}
+                    <input type="text" name="name">
+
+                    <button type="submit">Save</button>
+                </form>
+
+
+                @if (count($errors) > 0)
+                    		<div class="alert alert-danger">
+                        		<ul>
+                	            @foreach ($errors->all() as $error)
+                	                <li>{{ $error }}</li>
+                	            @endforeach
+                    		   </ul>
+                	    </div>
+                	@endif
+
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>

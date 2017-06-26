@@ -12,5 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+  return view('welcome');
+})->middleware('test');
+
+Route::resource('user', 'UserController');
+
+
+Route::resource('actor', 'ActorController');
+
+Route::resource('movie', 'MovieController');
+
+Route::resource('genre', 'GenreController');
